@@ -1,0 +1,82 @@
+div, input {
+    box-sizing: border-box;
+}
+
+#canvas {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin: 0 0 0 -400px;
+    width: 1000px;
+    height: 600px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0 3px #cccccc;
+    border-radius: 4px;
+}
+
+#command {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 0 3px #cccccc;
+    border-radius: 4px;
+    width: 300px;
+    height: 600px;
+}
+
+#confirm {
+    position: absolute;
+    left: 25px;
+    top: 90px;
+    width: 250px;
+    height: 30px;
+    line-height: 28px;
+    background-color: #ffffff;
+    text-align: center;
+    color: dodgerblue;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "微软雅黑", "Times New Roman", Arial;
+    border: 1px solid dodgerblue;
+    border-radius: 4px;
+}
+
+#confirm:hover {
+    color: #ffffff;
+    background-color: deepskyblue;
+    border-color: deepskyblue;
+}
+
+#confirm:active {
+    color: #ffffff;
+    background-color: dodgerblue;
+}
+
+.input {
+    width: 250px;
+    height: 30px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    color: #777777;
+    border-radius: 4px;
+}
+
+.input:focus {
+    color: #333333;
+    border-color: aquamarine;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px aquamarine;
+}
+
+#date_input {
+    position: absolute;
+    left: 25px;
+    top: 10px;
+}
+
+#symbol_input {
+    position: absolute;
+    left: 25px;
+    top: 50px;
+}

@@ -1,0 +1,14 @@
+time: Tue May 17 23:12:37 2016
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\finance\predict\lib\funcUtil.py", line 100, in killRunningProcess
+    with open(tmp_path, 'r') as f:
+IOError: [Errno 2] No such file or directory: 'C:\\xampp\\htdocs\\finance\\php\\predict\\tmp\\6820e5ebb7e7aaf68efd080cd20fd497\\pid.tmp'
+
+
+time: Tue May 17 23:12:37 2016
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\finance\predict\lib\funcUtil.py", line 111, in killRunningProcess
+    for file_name in os.listdir(tmp_dir_path):
+WindowsError: [Error 3] : 'C:\\xampp\\htdocs\\finance\\php\\predict\\tmp\\6820e5ebb7e7aaf68efd080cd20fd497/*.*'
+
+
