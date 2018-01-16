@@ -16,8 +16,8 @@ $symbol = '%' . $symbol . '%';
 $host = 'localhost';
 $port = 3306;
 $db_name = 'finance';
-$sql_user = "script";
-$sql_pass = "111111";
+$sql_user = "root";
+$sql_pass = "";
 
 try
 {

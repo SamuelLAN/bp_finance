@@ -4,8 +4,8 @@
 # 数据库配置
 def config():
     return {
-        'user': 'script',
-        'password': '111111',
+        'user': 'root',
+        'password': '',
         'host': 'localhost',
         'port': 3306,
         'connection_timeout': 1,
