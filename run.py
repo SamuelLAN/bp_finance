@@ -52,7 +52,8 @@ if __name__ == '__main__':
     input_node_num = 600
     output_node_num = 100
 
-    save_dir = r'data'
+    cur_path = os.path.abspath(os.path.split(__file__)[0])
+    save_dir = os.path.join(cur_path, r'data')
 
     X_training_file_path = os.path.join(save_dir, 'X_' + symbol + '_' + training_start_date + '_' + training_end_date + '_' + str(input_node_num) + '_' + str(unique_id) + '.mat')
     y_training_file_path = os.path.join(save_dir, 'y_' + symbol + '_' + training_start_date + '_' + training_end_date + '_' + str(input_node_num) + '_' + str(unique_id) + '.mat')
