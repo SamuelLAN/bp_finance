@@ -173,7 +173,14 @@ class DispatchManager(base.BaseManager):
         self.threadNums['handle'] -= 1
 
     def save(self):
+        import sys
+        cur_path = os.path.abspath(os.path.split(__file__)[0])
+        cur_cmd_path = os.path.abspath(os.getcwd())
+        os.chdir(cur_path)
+        sys.path.append(cur_path)
+
         save = __import__(self.__saveModule)
+        os.chdir(cur_cmd_path)
         o_save = save.Save(self.__config, self.__com)
         o_save.run()
 

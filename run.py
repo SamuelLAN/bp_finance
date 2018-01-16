@@ -43,9 +43,9 @@ if __name__ == '__main__':
     funcUtil.recordStatus(unique_id, 'Start ...')
 
     training_start_date = '2008-01-01'
-    training_end_date = '2014-12-31'
+    training_end_date = '2015-12-31'
 
-    test_start_date = '2015-01-01'
+    test_start_date = '2016-01-01'
     test_end_date = time.strftime('%Y-%m-%d', time.localtime())
     # test_end_date = '2016-05-16'
 
