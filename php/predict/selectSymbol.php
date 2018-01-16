@@ -44,5 +44,5 @@ try
 }
 catch (PDOException $err)
 {
-//    echo $err->getMessage();
+    echo $err->getMessage();
 }
