@@ -1,11 +1,15 @@
 <?php
 
-if(!isset($_COOKIE['username']) || !isset($_GET['symbol'])) {
-    echo 0;
-    exit;
-}
-$unique_id = $_COOKIE['username'];
-$symbol = $_GET['symbol'];
+//if(!isset($_COOKIE['username']) || !isset($_GET['symbol'])) {
+//    echo 0;
+//    exit;
+//}
+//$unique_id = $_COOKIE['username'];
+//$symbol = $_GET['symbol'];
+
+$unique_id = 'test123';
+$symbol = 'sh601988';
+
 $symbol = preg_replace('/[^szh0-9]/', '', $symbol);
 
 $dir_path = __DIR__ . '/../../';
