@@ -1,56 +1,50 @@
 <?php
 
 if(!isset($_COOKIE['username']) || !$_GET['symbol']) {
-    echo 0;
-    exit;
+	echo 0;
+	exit;
 }
 
-$param = array(
-    'stockid' => $_GET['symbol'],
-    'list' => 1,
-);
+$param = ['list' => $_GET['symbol']];
 
-$url = 'http://apis.baidu.com/apistore/stockservice/stock?' . http_build_query($param);
-
-$headers = array(
-    'apikey: 89a4bd5eca67cf899dc2490f1e2a52ae',
-);
+$url = 'http://hq.sinajs.cn/' . http_build_query($param);
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
-curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $data = curl_exec($ch);
 $curl_info = curl_getinfo($ch);
 curl_close($ch);
 
+$http_code = $curl_info['http_code'];
 
-$data = json_decode($data);
-if($data->errNum != 0) {
-    echo 0;
-    exit;
+if ($http_code != 200 || !$data)
+{
+	echo 0;
+	exit();
 }
 
-$data = $data->retData->stockinfo;
-$data = $data[0];
+preg_match('/"([^"]+)"/', $data, $matches);
 
-$encoding = mb_detect_encoding($data->name, array('UTF-8', 'GB2312', 'UTF-16', 'UCS-2', 'BIG5', 'ASCII'));
-$data->name = iconv($encoding, 'UTF-8', $data->name);
+$data = $matches[1];
+$data = explode(',', $data);
+
+$name = $data[0];
+
+$encoding = mb_detect_encoding($name, array("ASCII",'UTF-8',"GB2312","GBK",'BIG5'));
+$name = mb_convert_encoding($name, 'UTF-8', $encoding);
 
 $json = array(
-    'name' => $data->name,
-    'open' => $data->OpenningPrice,
-    'last_end' => $data->closingPrice,
-    'price' => $data->currentPrice,
-    'highest' => $data->hPrice,
-    'lowest' => $data->lPrice,
-    'volume' => $data->totalNumber,
-    'turnover' => $data->turnover,
+	'name' => $name,
+	'open' => $data[1],
+	'last_end' => $data[2],
+	'price' => $data[3],
+	'highest' => $data[4],
+	'lowest' => $data[5],
+	'volume' => $data[8],
+	'turnover' => $data[9],
 );
 
 echo json_encode($json);
-exit;
+exit();
