@@ -13,7 +13,7 @@ if(!$symbol) {
 
 $symbol = '%' . $symbol . '%';
 
-$host = '127.0.0.1';
+$host = 'localhost';
 $port = 3306;
 $db_name = 'finance';
 $sql_user = "root";

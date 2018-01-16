@@ -6,7 +6,7 @@ def config():
     return {
         'user': 'root',
         'password': '',
-        'host': '127.0.0.1',
+        'host': 'localhost',
         'port': 3306,
         'connection_timeout': 1,
         'database': 'finance',
