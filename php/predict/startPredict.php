@@ -8,10 +8,12 @@ $unique_id = $_COOKIE['username'];
 $symbol = $_GET['symbol'];
 $symbol = preg_replace('/[^szh0-9]/', '', $symbol);
 
+$dir_path = __DIR__ . '/../../';
+
 if(preg_match('/Windows/', php_uname('s'), $matches)) {
-    $exec = 'cd ../../&python run.py ' . $unique_id . ' ' . $symbol;
+    $exec = "cd $dir_path&python run.py " . $unique_id . ' ' . $symbol;
 } else {
-    $exec = 'cd ../../;python run.py ' . $unique_id . ' ' . $symbol;
+    $exec = "cd $dir_path;python run.py " . $unique_id . ' ' . $symbol;
 }
 exec($exec, $out_put);
 
