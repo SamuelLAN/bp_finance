@@ -1,40 +1,48 @@
-# 基于BP神经网络的高频金融时间序列分析
+# High-frequency Financial Time Series Analysis Based on BP Neural Networks
 
-#### 论文
+#### Paper
 > http://www.lin-baobao.com/static/files/graduate_paper.pdf
 
-#### 演示视频
+#### Video for Demonstration
 > http://www.lin-baobao.com/static/videos/graduate_project.flv
 
-#### 应用地址
+#### Application
 > http://www.lin-baobao.com/bp_finance/php/login/
 
-### 项目分3个部分
+### This project includes three sections.
 
 - GetData
 
-    数据爬取
+    Data crawling.
 
-    负责将近几年的股票高频数据爬取并处理成适当的数据格式
+    Responsible for crawling and processing the high frequency data of stock transcation in recent years. And the data format would be converted to an appropriate format.
 
 - predict
 
-    核心算法
+    Core algorithm.
 
-    使用了 bp （自己实现，没有借助任何框架）
+    Implement the Back Propagation Neural Networks without using any framework (all code is completely written by myself).
 
 - php
 
-    集成系统
+    System integration.
 
-    将前两部分集成为一个系统
+    Integrate the first two parts into a system.
 
-#### 项目描述
-> 采用任意的上证或深证股票每天所有交易的数据作为样本，基于BP神经网络，对高频数据进行分析和预测。检验不同的数据预处理方法以及不同频率的金融数据对于预测未来价格效果的影响。结果发现，高频的数据更有利于预测，并根据此，完成了一个对上证或深证股票的实时预测系统。项目共分3个阶段：1、数据爬取；2、核心算法；3、系统集成。1和2阶段主要采用python实现，预测的方向准确率平均在55%-60%左右，实际价格的相对误差维持在0.015%左右，系统采用php实现。该项目也有尝试使用深度学习的方法，但当时没有采用任何框架，所有公式都自己推导并实现，可能是推导时出错了也可能是参数没调好问题，最终没有尝试成功。之后有时间会重新尝试改进。
+#### Project description
+> It included data crawling, model design, code implementation, result analysis,
+experiments and system integration.
+- 1. Crawled the data of some stocks’ transactions per day.
+- 2. Chose BP Neural Network as model, deduced the formulas myself and implemented code
+without using any framework.
+- 3. The direction accuracy was about 55%-60% and the relative error between the actual and the
+predicted price maintained at 0.015%. Reached the conclusion that high-frequency data is better for
+stock price prediction via testing data’s impact at different frequencies.
+- 4. Integrated the algorithm into a real-time stock price prediction system.
 
-#### 部署
-> 需要部署 mysql，sql 文件在 [finance.sql](finance.sql)
+#### Deployment
+> Need to deploy mysql, and the sql file is in [finance.sql](finance.sql)
 
-#### 运行方式
-> 直接调用 [run.py](run.py) 就可以了
+#### Ways to run
+> Just call the [run.py](run.py) directly.
 
